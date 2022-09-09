@@ -1,6 +1,7 @@
 class RegisterPage {
   navigate() {
     cy.visit("https://parabank.parasoft.com/parabank/register.htm");
+    return this;
   }
 
   enterFirstName(firstname: string) {
@@ -60,6 +61,7 @@ class RegisterPage {
 
   submit() {
     cy.get("[id=customerForm]").submit();
+    return this;
   }
 
   getSuccessfulRegistration() {
@@ -80,6 +82,7 @@ class RegisterPage {
     cy.get("[id='repeatedPassword.errors']").contains(
       "Passwords did not match."
     );
+    return this;
   }
 
   getEmptyFirstNameError() {
