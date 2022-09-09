@@ -1,0 +1,4 @@
+{
+  "invalidCredentials": "The username and password could not be verified.",
+  "emptyCredentials": "Please enter a username and password."
+}

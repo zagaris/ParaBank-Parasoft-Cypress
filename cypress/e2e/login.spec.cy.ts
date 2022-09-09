@@ -3,9 +3,12 @@
 import LoginPage from "./PageObject/LoginPage";
 
 describe("Parabank login", () => {
-  before(() => {
+  beforeEach(() => {
     cy.fixture("credentials").then(function (testdata) {
       this.testdata = testdata;
+    });
+    cy.fixture("loginPageMessages").then(function (credentials) {
+      this.credentials = credentials;
     });
   });
   it("Login with valid credentials", function () {
@@ -24,11 +27,14 @@ describe("Parabank login", () => {
       .enterUsername("invalid")
       .enterPassword("invalid")
       .submit()
-      .getInvalidCredentialsError();
+      .getInvalidCredentialsError(this.credentials.invalidCredentials);
   });
   it("Login with empty username and password", function () {
     const loginPage = new LoginPage();
-    loginPage.navigate().submit().getEmptyCredentialsError();
+    loginPage
+      .navigate()
+      .submit()
+      .getEmptyCredentialsError(this.credentials.emptyCredentials);
   });
   it("Login with empty password", function () {
     const loginPage = new LoginPage();
@@ -36,6 +42,6 @@ describe("Parabank login", () => {
       .navigate()
       .enterUsername("Jonh")
       .submit()
-      .getEmptyCredentialsError();
+      .getEmptyCredentialsError(this.credentials.emptyCredentials);
   });
 });

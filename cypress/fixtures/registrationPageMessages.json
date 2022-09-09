@@ -1,0 +1,15 @@
+{
+  "successfulRegistrationMessage": "Your account was created successfully. You are now logged in.",
+  "duplicateUsernameErrorMessage": "This username already exists.",
+  "noMatchingPasswordsErrorMessage": "Passwords did not match.",
+  "emptyFirstNameErrorMessage": "First name is required.",
+  "emptyLastNameErrorMessage": "Last name is required.",
+  "emptyAddressErrorMessage": "Address is required.",
+  "emptyCityErrorMessage": "City is required.",
+  "emptyStateErrorMessage": "State is required.",
+  "emptyZipCodeMessage": "Zip Code is required",
+  "emptySSNErrorMessage": "Social Security Number is required.",
+  "emptyUsernameErroMessage": "Username is required.",
+  "emptyPasswordMessage": "Password is required.",
+  "emptyConfirmationPasswordErrorMessage": "Password confirmation is required."
+}

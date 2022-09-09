@@ -19,15 +19,13 @@ class LoginPage {
     return this;
   }
 
-  getInvalidCredentialsError() {
-    cy.get("[class=error]").contains(
-      "The username and password could not be verified."
-    );
+  getInvalidCredentialsError(message: string) {
+    cy.get("[class=error]").contains(message);
     return this;
   }
 
-  getEmptyCredentialsError() {
-    cy.get("[class=error]").contains("Please enter a username and password.");
+  getEmptyCredentialsError(message: string) {
+    cy.get("[class=error]").contains(message);
     return this;
   }
 }

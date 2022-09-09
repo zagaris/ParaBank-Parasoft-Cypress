@@ -7,6 +7,9 @@ describe("Parabank register", () => {
     cy.fixture("registrationInfo").then(function (testdata) {
       this.testdata = testdata;
     });
+    cy.fixture("registrationPageMessages").then(function (registrationData) {
+      this.registrationData = registrationData;
+    });
   });
   it("Register with correct info", function () {
     const registerPage = new RegisterPage();
@@ -24,7 +27,9 @@ describe("Parabank register", () => {
       .enterPassword(this.testdata.password)
       .enterConfirmationPassword(this.testdata.confirmationPassword)
       .submit()
-      .getSuccessfulRegistration();
+      .getSuccessfulRegistrationMessage(
+        this.registrationData.successfulRegistrationMessage
+      );
   });
   it("Register user with existing username", function () {
     const registerPage = new RegisterPage();
@@ -42,7 +47,9 @@ describe("Parabank register", () => {
       .enterPassword(this.testdata.password)
       .enterConfirmationPassword(this.testdata.confirmationPassword)
       .submit()
-      .getDuplicateUsernameError();
+      .getDuplicateUsernameError(
+        this.registrationData.duplicateUsernameErrorMessage
+      );
   });
   it("Register user with no matching passwords", function () {
     const registerPage = new RegisterPage();
@@ -60,7 +67,9 @@ describe("Parabank register", () => {
       .enterPassword("12345")
       .enterConfirmationPassword("1234")
       .submit()
-      .getNotMatchingPasswordsError();
+      .getNoMatchingPasswordsError(
+        this.registrationData.noMatchingPasswordsErrorMessage
+      );
   });
   it("Register user with empty First Name", function () {
     const registerPage = new RegisterPage();
@@ -77,7 +86,7 @@ describe("Parabank register", () => {
       .enterPassword(this.testdata.password)
       .enterConfirmationPassword(this.testdata.confirmationPassword)
       .submit()
-      .getEmptyFirstNameError();
+      .getEmptyFirstNameError(this.registrationData.emptyFirstNameErrorMessage);
   });
   it("Register user with empty Last Name", function () {
     const registerPage = new RegisterPage();
@@ -94,7 +103,7 @@ describe("Parabank register", () => {
       .enterPassword(this.testdata.password)
       .enterConfirmationPassword(this.testdata.confirmationPassword)
       .submit()
-      .getEmptyLastNameError();
+      .getEmptyLastNameError(this.registrationData.emptyLastNameErrorMessage);
   });
   it("Register user with empty address", function () {
     const registerPage = new RegisterPage();
@@ -111,7 +120,7 @@ describe("Parabank register", () => {
       .enterPassword(this.testdata.password)
       .enterConfirmationPassword(this.testdata.confirmationPassword)
       .submit()
-      .getEmptyAddressError();
+      .getEmptyAddressError(this.registrationData.emptyAddressErrorMessage);
   });
   it("Register user with empty city", function () {
     const registerPage = new RegisterPage();
@@ -128,7 +137,7 @@ describe("Parabank register", () => {
       .enterPassword(this.testdata.password)
       .enterConfirmationPassword(this.testdata.confirmationPassword)
       .submit()
-      .getEmptyCityError();
+      .getEmptyCityError(this.registrationData.emptyCityErrorMessage);
   });
   it("Register user with empty state", function () {
     const registerPage = new RegisterPage();
@@ -145,7 +154,7 @@ describe("Parabank register", () => {
       .enterPassword(this.testdata.password)
       .enterConfirmationPassword(this.testdata.confirmationPassword)
       .submit()
-      .getEmptyStateError();
+      .getEmptyStateError(this.registrationData.emptyStateErrorMessage);
   });
   it("Register user with empty zip code", function () {
     const registerPage = new RegisterPage();
@@ -162,7 +171,7 @@ describe("Parabank register", () => {
       .enterPassword(this.testdata.password)
       .enterConfirmationPassword(this.testdata.confirmationPassword)
       .submit()
-      .getEmptyZipCodeError();
+      .getEmptyZipCodeError(this.registrationData.emptyZipCodeMessage);
   });
   it("Register user with empty SSN", function () {
     const registerPage = new RegisterPage();
@@ -179,7 +188,7 @@ describe("Parabank register", () => {
       .enterPassword(this.testdata.password)
       .enterConfirmationPassword(this.testdata.confirmationPassword)
       .submit()
-      .getEmptySSNError();
+      .getEmptySSNError(this.registrationData.emptySSNErrorMessage);
   });
   it("Register user with empty username", function () {
     const registerPage = new RegisterPage();
@@ -196,7 +205,7 @@ describe("Parabank register", () => {
       .enterPassword(this.testdata.password)
       .enterConfirmationPassword(this.testdata.confirmationPassword)
       .submit()
-      .getEmptyUsernameError();
+      .getEmptyUsernameError(this.registrationData.emptyUsernameErroMessage);
   });
   it("Register user with empty password", function () {
     const registerPage = new RegisterPage();
@@ -213,7 +222,7 @@ describe("Parabank register", () => {
       .enterUsername(this.testdata.username)
       .enterConfirmationPassword(this.testdata.confirmationPassword)
       .submit()
-      .getEmptyPasswordError();
+      .getEmptyPasswordError(this.registrationData.emptyPasswordMessage);
   });
   it("Register user with empty confirmation password", function () {
     const registerPage = new RegisterPage();
@@ -230,6 +239,8 @@ describe("Parabank register", () => {
       .enterUsername(this.testdata.username)
       .enterPassword(this.testdata.password)
       .submit()
-      .getEmptyConfirmationPasswordError();
+      .getEmptyConfirmationPasswordError(
+        this.registrationData.emptyConfirmationPasswordErrorMessage
+      );
   });
 });

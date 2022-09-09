@@ -64,74 +64,68 @@ class RegisterPage {
     return this;
   }
 
-  getSuccessfulRegistration() {
-    cy.get("[id=rightPanel]").contains(
-      "Your account was created successfully. You are now logged in."
-    );
+  getSuccessfulRegistrationMessage(message: string) {
+    cy.get("[id=rightPanel]").contains(message);
     return this;
   }
 
-  getDuplicateUsernameError() {
-    cy.get("[id='customer.username.errors']").contains(
-      "This username already exists."
-    );
+  getDuplicateUsernameError(message: string) {
+    cy.get("[id='customer.username.errors']").contains(message);
     return this;
   }
 
-  getNotMatchingPasswordsError() {
-    cy.get("[id='repeatedPassword.errors']").contains(
-      "Passwords did not match."
-    );
+  getNoMatchingPasswordsError(message: string) {
+    cy.get("[id='repeatedPassword.errors']").contains(message);
     return this;
   }
 
-  getEmptyFirstNameError() {
-    cy.get(".form2").contains("First name is required.");
+  getEmptyFirstNameError(message: string) {
+    cy.get(".form2").contains(message);
     return this;
   }
 
-  getEmptyLastNameError() {
-    cy.get(".form2").contains("Last name is required.");
+  getEmptyLastNameError(message: string) {
+    cy.get(".form2").contains(message);
     return this;
   }
 
-  getEmptyAddressError() {
-    cy.get(".form2").contains("Address is required.");
+  getEmptyAddressError(message: string) {
+    cy.get(".form2").contains(message);
     return this;
   }
 
-  getEmptyCityError() {
-    cy.get(".form2").contains("City is required.");
+  getEmptyCityError(message: string) {
+    cy.get(".form2").contains(message);
     return this;
   }
 
-  getEmptyStateError() {
-    cy.get(".form2").contains("State is required.");
+  getEmptyStateError(message: string) {
+    cy.get(".form2").contains(message);
     return this;
   }
 
-  getEmptyZipCodeError() {
-    cy.get(".form2").contains("Zip Code is required");
+  getEmptyZipCodeError(message: string) {
+    cy.get(".form2").contains(message);
     return this;
   }
 
-  getEmptySSNError() {
-    cy.get(".form2").contains("Social Security Number is required.");
+  getEmptySSNError(message: string) {
+    cy.get(".form2").contains(message);
     return this;
   }
 
-  getEmptyUsernameError() {
-    cy.get(".form2").contains("Username is required.");
+  getEmptyUsernameError(message: string) {
+    cy.get(".form2").contains(message);
     return this;
   }
 
-  getEmptyPasswordError() {
-    cy.get(".form2").contains("Password is required.");
+  getEmptyPasswordError(message: string) {
+    cy.get(".form2").contains(message);
     return this;
   }
 
-  getEmptyConfirmationPasswordError() {
-    cy.get(".form2").contains("Password confirmation is required.");
+  getEmptyConfirmationPasswordError(message: string) {
+    cy.get(".form2").contains(message);
     return this;
   }
 }
