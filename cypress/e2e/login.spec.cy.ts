@@ -9,32 +9,33 @@ describe("Parabank login", () => {
     });
   });
   it("Login with valid credentials", function () {
-    const login = new LoginPage();
-    login.navigate();
-    login.enterUsername(this.testdata.username);
-    login.enterPassword(this.testdata.password);
-    login.submit();
+    const loginPage = new LoginPage();
+    loginPage
+      .navigate()
+      .enterUsername(this.testdata.username)
+      .enterPassword(this.testdata.password)
+      .submit();
     cy.url().should("be.equal", this.testdata.overviewUrl);
   });
   it("Login with invalid credentials", function () {
-    const login = new LoginPage();
-    login.navigate();
-    login.enterUsername("invalid");
-    login.enterPassword("invalid");
-    login.submit();
-    login.getInvalidCredentialsError();
+    const loginPage = new LoginPage();
+    loginPage
+      .navigate()
+      .enterUsername("invalid")
+      .enterPassword("invalid")
+      .submit()
+      .getInvalidCredentialsError();
   });
   it("Login with empty username and password", function () {
-    const login = new LoginPage();
-    login.navigate();
-    login.submit();
-    login.getEmptyCredentialsError();
+    const loginPage = new LoginPage();
+    loginPage.navigate().submit().getEmptyCredentialsError();
   });
   it("Login with empty password", function () {
-    const login = new LoginPage();
-    login.navigate();
-    login.enterUsername("Jonh");
-    login.submit();
-    login.getEmptyCredentialsError();
+    const loginPage = new LoginPage();
+    loginPage
+      .navigate()
+      .enterUsername("Jonh")
+      .submit()
+      .getEmptyCredentialsError();
   });
 });
