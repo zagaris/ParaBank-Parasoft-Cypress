@@ -1,6 +1,7 @@
 class LoginPage {
   navigate() {
     cy.visit("https://parabank.parasoft.com/parabank/register.htm");
+    return this;
   }
 
   enterUsername(username: string) {
@@ -15,6 +16,7 @@ class LoginPage {
 
   submit() {
     cy.get("[name=login]").submit();
+    return this;
   }
 
   getInvalidCredentialsError() {

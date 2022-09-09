@@ -9,260 +9,227 @@ describe("Parabank register", () => {
     });
   });
   it("Register with correct info", function () {
-    const register = new RegisterPage();
-    register.navigate();
-    register.enterFirstName(this.testdata.firstname);
-    register.enterLastName(this.testdata.lastname);
-    register.enterAddress(this.testdata.address);
-    register.enterCity(this.testdata.city);
-    register.enterState(this.testdata.state);
-    register.enterZipCode(this.testdata.zipCode);
-    register.enterPhoneNumber(this.testdata.phoneNumber);
-    register.enterSSN(this.testdata.ssn);
-    register.enterUsername(this.testdata.username);
-    register.enterPassword(this.testdata.password);
-    register.enterConfirmationPassword(this.testdata.confirmationPassword);
-    register.submit();
-    register.getSuccessfulRegistration();
+    const registerPage = new RegisterPage();
+    registerPage
+      .navigate()
+      .enterFirstName(this.testdata.firstname)
+      .enterLastName(this.testdata.lastname)
+      .enterAddress(this.testdata.address)
+      .enterCity(this.testdata.city)
+      .enterState(this.testdata.state)
+      .enterZipCode(this.testdata.zipCode)
+      .enterPhoneNumber(this.testdata.phoneNumber)
+      .enterSSN(this.testdata.ssn)
+      .enterUsername(this.testdata.username)
+      .enterPassword(this.testdata.password)
+      .enterConfirmationPassword(this.testdata.confirmationPassword)
+      .submit()
+      .getSuccessfulRegistration();
   });
   it("Register user with existing username", function () {
-    const register = new RegisterPage();
-    register.navigate();
-    register.enterFirstName(this.testdata.firstname);
-    register.enterLastName(this.testdata.lastname);
-    register.enterAddress(this.testdata.address);
-    register.enterCity(this.testdata.city);
-    register.enterState(this.testdata.state);
-    register.enterZipCode(this.testdata.zipCode);
-    register.enterPhoneNumber(this.testdata.phoneNumber);
-    register.enterSSN(this.testdata.ssn);
-    register.enterUsername("Yiannis9999");
-    register.enterPassword(this.testdata.password);
-    register.enterConfirmationPassword(this.testdata.confirmationPassword);
-    register.submit();
-    register.getDuplicateUsernameError();
+    const registerPage = new RegisterPage();
+    registerPage
+      .navigate()
+      .enterFirstName(this.testdata.firstname)
+      .enterLastName(this.testdata.lastname)
+      .enterAddress(this.testdata.address)
+      .enterCity(this.testdata.city)
+      .enterState(this.testdata.state)
+      .enterZipCode(this.testdata.zipCode)
+      .enterPhoneNumber(this.testdata.phoneNumber)
+      .enterSSN(this.testdata.ssn)
+      .enterUsername("Yiannis9999")
+      .enterPassword(this.testdata.password)
+      .enterConfirmationPassword(this.testdata.confirmationPassword)
+      .submit()
+      .getDuplicateUsernameError();
   });
   it("Register user with no matching passwords", function () {
-    const register = new RegisterPage();
-    register.navigate();
-    register.enterFirstName(this.testdata.firstname);
-    register.enterLastName(this.testdata.lastname);
-    register.enterAddress(this.testdata.address);
-    register.enterCity(this.testdata.city);
-    register.enterState(this.testdata.state);
-    register.enterZipCode(this.testdata.zipCode);
-    register.enterPhoneNumber(this.testdata.phoneNumber);
-    register.enterSSN(this.testdata.ssn);
-    register.enterUsername(this.testdata.username);
-    register.enterPassword("12345");
-    register.enterConfirmationPassword("1234");
-    register.submit();
-    register.getNotMatchingPasswordsError();
+    const registerPage = new RegisterPage();
+    registerPage
+      .navigate()
+      .enterFirstName(this.testdata.firstname)
+      .enterLastName(this.testdata.lastname)
+      .enterAddress(this.testdata.address)
+      .enterCity(this.testdata.city)
+      .enterState(this.testdata.state)
+      .enterZipCode(this.testdata.zipCode)
+      .enterPhoneNumber(this.testdata.phoneNumber)
+      .enterSSN(this.testdata.ssn)
+      .enterUsername(this.testdata.username)
+      .enterPassword("12345")
+      .enterConfirmationPassword("1234")
+      .submit()
+      .getNotMatchingPasswordsError();
   });
   it("Register user with empty First Name", function () {
-    const register = new RegisterPage();
-    register.navigate();
-    register.enterLastName(this.testdata.lastname);
-    register.enterAddress(this.testdata.address);
-    register.enterCity(this.testdata.city);
-    register.enterState(this.testdata.state);
-    register.enterZipCode(this.testdata.zipCode);
-    register.enterPhoneNumber(this.testdata.phoneNumber);
-    register.enterSSN(this.testdata.ssn);
-    register.enterUsername(this.testdata.username);
-    register.enterPassword(this.testdata.password);
-    register.enterConfirmationPassword(this.testdata.confirmationPassword);
-    register.submit();
-    register.getEmptyFirstNameError();
+    const registerPage = new RegisterPage();
+    registerPage
+      .navigate()
+      .enterLastName(this.testdata.lastname)
+      .enterAddress(this.testdata.address)
+      .enterCity(this.testdata.city)
+      .enterState(this.testdata.state)
+      .enterZipCode(this.testdata.zipCode)
+      .enterPhoneNumber(this.testdata.phoneNumber)
+      .enterSSN(this.testdata.ssn)
+      .enterUsername(this.testdata.username)
+      .enterPassword(this.testdata.password)
+      .enterConfirmationPassword(this.testdata.confirmationPassword)
+      .submit()
+      .getEmptyFirstNameError();
   });
   it("Register user with empty Last Name", function () {
-    const register = new RegisterPage();
-    register.navigate();
-    register.enterFirstName(this.testdata.firstname);
-    register.enterAddress(this.testdata.address);
-    register.enterCity(this.testdata.city);
-    register.enterState(this.testdata.state);
-    register.enterZipCode(this.testdata.zipCode);
-    register.enterPhoneNumber(this.testdata.phoneNumber);
-    register.enterSSN(this.testdata.ssn);
-    register.enterUsername(this.testdata.username);
-    register.enterPassword(this.testdata.password);
-    register.enterConfirmationPassword(this.testdata.confirmationPassword);
-    register.submit();
-    register.getEmptyLastNameError();
+    const registerPage = new RegisterPage();
+    registerPage
+      .navigate()
+      .enterFirstName(this.testdata.firstname)
+      .enterAddress(this.testdata.address)
+      .enterCity(this.testdata.city)
+      .enterState(this.testdata.state)
+      .enterZipCode(this.testdata.zipCode)
+      .enterPhoneNumber(this.testdata.phoneNumber)
+      .enterSSN(this.testdata.ssn)
+      .enterUsername(this.testdata.username)
+      .enterPassword(this.testdata.password)
+      .enterConfirmationPassword(this.testdata.confirmationPassword)
+      .submit()
+      .getEmptyLastNameError();
   });
   it("Register user with empty address", function () {
-    const register = new RegisterPage();
-    register.navigate();
-    register.enterFirstName(this.testdata.firstname);
-    register.enterLastName(this.testdata.lastname);
-    register.enterCity(this.testdata.city);
-    register.enterState(this.testdata.state);
-    register.enterZipCode(this.testdata.zipCode);
-    register.enterPhoneNumber(this.testdata.phoneNumber);
-    register.enterSSN(this.testdata.ssn);
-    register.enterUsername(this.testdata.username);
-    register.enterPassword(this.testdata.password);
-    register.enterConfirmationPassword(this.testdata.confirmationPassword);
-    register.submit();
-    register.getEmptyAddressError();
+    const registerPage = new RegisterPage();
+    registerPage
+      .navigate()
+      .enterFirstName(this.testdata.firstname)
+      .enterLastName(this.testdata.lastname)
+      .enterCity(this.testdata.city)
+      .enterState(this.testdata.state)
+      .enterZipCode(this.testdata.zipCode)
+      .enterPhoneNumber(this.testdata.phoneNumber)
+      .enterSSN(this.testdata.ssn)
+      .enterUsername(this.testdata.username)
+      .enterPassword(this.testdata.password)
+      .enterConfirmationPassword(this.testdata.confirmationPassword)
+      .submit()
+      .getEmptyAddressError();
   });
   it("Register user with empty city", function () {
-    const register = new RegisterPage();
-    register.navigate();
-    register.enterFirstName(this.testdata.firstname);
-    register.enterLastName(this.testdata.lastname);
-    register.enterAddress(this.testdata.address);
-    register.enterState(this.testdata.state);
-    register.enterZipCode(this.testdata.zipCode);
-    register.enterPhoneNumber(this.testdata.phoneNumber);
-    register.enterSSN(this.testdata.ssn);
-    register.enterUsername(this.testdata.username);
-    register.enterPassword(this.testdata.password);
-    register.enterConfirmationPassword(this.testdata.confirmationPassword);
-    register.submit();
-    register.getEmptyCityError();
+    const registerPage = new RegisterPage();
+    registerPage
+      .navigate()
+      .enterFirstName(this.testdata.firstname)
+      .enterLastName(this.testdata.lastname)
+      .enterAddress(this.testdata.address)
+      .enterState(this.testdata.state)
+      .enterZipCode(this.testdata.zipCode)
+      .enterPhoneNumber(this.testdata.phoneNumber)
+      .enterSSN(this.testdata.ssn)
+      .enterUsername(this.testdata.username)
+      .enterPassword(this.testdata.password)
+      .enterConfirmationPassword(this.testdata.confirmationPassword)
+      .submit()
+      .getEmptyCityError();
   });
   it("Register user with empty state", function () {
-    const register = new RegisterPage();
-    register.navigate();
-    register.enterFirstName(this.testdata.firstname);
-    register.enterLastName(this.testdata.lastname);
-    register.enterAddress(this.testdata.address);
-    register.enterCity(this.testdata.city);
-    register.enterZipCode(this.testdata.zipCode);
-    register.enterPhoneNumber(this.testdata.phoneNumber);
-    register.enterSSN(this.testdata.ssn);
-    register.enterUsername(this.testdata.username);
-    register.enterPassword(this.testdata.password);
-    register.enterConfirmationPassword(this.testdata.confirmationPassword);
-    register.submit();
-    register.getEmptyStateError();
+    const registerPage = new RegisterPage();
+    registerPage
+      .navigate()
+      .enterFirstName(this.testdata.firstname)
+      .enterLastName(this.testdata.lastname)
+      .enterAddress(this.testdata.address)
+      .enterCity(this.testdata.city)
+      .enterZipCode(this.testdata.zipCode)
+      .enterPhoneNumber(this.testdata.phoneNumber)
+      .enterSSN(this.testdata.ssn)
+      .enterUsername(this.testdata.username)
+      .enterPassword(this.testdata.password)
+      .enterConfirmationPassword(this.testdata.confirmationPassword)
+      .submit()
+      .getEmptyStateError();
   });
   it("Register user with empty zip code", function () {
-    const register = new RegisterPage();
-    register.navigate();
-    register.enterFirstName(this.testdata.firstname);
-    register.enterLastName(this.testdata.lastname);
-    register.enterAddress(this.testdata.address);
-    register.enterCity(this.testdata.city);
-    register.enterState(this.testdata.state);
-    register.enterPhoneNumber(this.testdata.phoneNumber);
-    register.enterSSN(this.testdata.ssn);
-    register.enterUsername(this.testdata.username);
-    register.enterPassword(this.testdata.password);
-    register.enterConfirmationPassword(this.testdata.confirmationPassword);
-    register.submit();
-    register.getEmptyZipCodeError();
+    const registerPage = new RegisterPage();
+    registerPage
+      .navigate()
+      .enterFirstName(this.testdata.firstname)
+      .enterLastName(this.testdata.lastname)
+      .enterAddress(this.testdata.address)
+      .enterCity(this.testdata.city)
+      .enterState(this.testdata.state)
+      .enterPhoneNumber(this.testdata.phoneNumber)
+      .enterSSN(this.testdata.ssn)
+      .enterUsername(this.testdata.username)
+      .enterPassword(this.testdata.password)
+      .enterConfirmationPassword(this.testdata.confirmationPassword)
+      .submit()
+      .getEmptyZipCodeError();
   });
   it("Register user with empty SSN", function () {
-    const register = new RegisterPage();
-    register.navigate();
-    register.enterFirstName(this.testdata.firstname);
-    register.enterLastName(this.testdata.lastname);
-    register.enterAddress(this.testdata.address);
-    register.enterCity(this.testdata.city);
-    register.enterState(this.testdata.state);
-    register.enterZipCode(this.testdata.zipCode);
-    register.enterPhoneNumber(this.testdata.phoneNumber);
-    register.enterUsername(this.testdata.username);
-    register.enterPassword(this.testdata.password);
-    register.enterConfirmationPassword(this.testdata.confirmationPassword);
-    register.submit();
-    register.getEmptySSNError();
+    const registerPage = new RegisterPage();
+    registerPage
+      .navigate()
+      .enterFirstName(this.testdata.firstname)
+      .enterLastName(this.testdata.lastname)
+      .enterAddress(this.testdata.address)
+      .enterCity(this.testdata.city)
+      .enterState(this.testdata.state)
+      .enterZipCode(this.testdata.zipCode)
+      .enterPhoneNumber(this.testdata.phoneNumber)
+      .enterUsername(this.testdata.username)
+      .enterPassword(this.testdata.password)
+      .enterConfirmationPassword(this.testdata.confirmationPassword)
+      .submit()
+      .getEmptySSNError();
   });
   it("Register user with empty username", function () {
-    const register = new RegisterPage();
-    register.navigate();
-    register.enterFirstName(this.testdata.firstname);
-    register.enterLastName(this.testdata.lastname);
-    register.enterAddress(this.testdata.address);
-    register.enterCity(this.testdata.city);
-    register.enterState(this.testdata.state);
-    register.enterZipCode(this.testdata.zipCode);
-    register.enterPhoneNumber(this.testdata.phoneNumber);
-    register.enterSSN(this.testdata.ssn);
-    register.enterPassword(this.testdata.password);
-    register.enterConfirmationPassword(this.testdata.confirmationPassword);
-    register.submit();
-    register.getEmptyUsernameError();
-  });
-  it("Register user with empty username", function () {
-    const register = new RegisterPage();
-    register.navigate();
-    register.enterFirstName(this.testdata.firstname);
-    register.enterLastName(this.testdata.lastname);
-    register.enterAddress(this.testdata.address);
-    register.enterCity(this.testdata.city);
-    register.enterState(this.testdata.state);
-    register.enterZipCode(this.testdata.zipCode);
-    register.enterPhoneNumber(this.testdata.phoneNumber);
-    register.enterSSN(this.testdata.ssn);
-    register.enterPassword(this.testdata.password);
-    register.enterConfirmationPassword(this.testdata.confirmationPassword);
-    register.submit();
-    register.getEmptyUsernameError();
-  });
-  it("Register user with empty username", function () {
-    const register = new RegisterPage();
-    register.navigate();
-    register.enterFirstName(this.testdata.firstname);
-    register.enterLastName(this.testdata.lastname);
-    register.enterAddress(this.testdata.address);
-    register.enterCity(this.testdata.city);
-    register.enterState(this.testdata.state);
-    register.enterZipCode(this.testdata.zipCode);
-    register.enterPhoneNumber(this.testdata.phoneNumber);
-    register.enterSSN(this.testdata.ssn);
-    register.enterPassword(this.testdata.password);
-    register.enterConfirmationPassword(this.testdata.confirmationPassword);
-    register.submit();
-    register.getEmptyUsernameError();
-  });
-  it("Register user with empty username", function () {
-    const register = new RegisterPage();
-    register.navigate();
-    register.enterFirstName(this.testdata.firstname);
-    register.enterLastName(this.testdata.lastname);
-    register.enterAddress(this.testdata.address);
-    register.enterCity(this.testdata.city);
-    register.enterState(this.testdata.state);
-    register.enterZipCode(this.testdata.zipCode);
-    register.enterPhoneNumber(this.testdata.phoneNumber);
-    register.enterSSN(this.testdata.ssn);
-    register.enterPassword(this.testdata.password);
-    register.enterConfirmationPassword(this.testdata.confirmationPassword);
-    register.submit();
-    register.getEmptyUsernameError();
+    const registerPage = new RegisterPage();
+    registerPage
+      .navigate()
+      .enterFirstName(this.testdata.firstname)
+      .enterLastName(this.testdata.lastname)
+      .enterAddress(this.testdata.address)
+      .enterCity(this.testdata.city)
+      .enterState(this.testdata.state)
+      .enterZipCode(this.testdata.zipCode)
+      .enterPhoneNumber(this.testdata.phoneNumber)
+      .enterSSN(this.testdata.ssn)
+      .enterPassword(this.testdata.password)
+      .enterConfirmationPassword(this.testdata.confirmationPassword)
+      .submit()
+      .getEmptyUsernameError();
   });
   it("Register user with empty password", function () {
-    const register = new RegisterPage();
-    register.navigate();
-    register.enterFirstName(this.testdata.firstname);
-    register.enterLastName(this.testdata.lastname);
-    register.enterAddress(this.testdata.address);
-    register.enterCity(this.testdata.city);
-    register.enterState(this.testdata.state);
-    register.enterZipCode(this.testdata.zipCode);
-    register.enterPhoneNumber(this.testdata.phoneNumber);
-    register.enterSSN(this.testdata.ssn);
-    register.enterConfirmationPassword(this.testdata.confirmationPassword);
-    register.submit();
-    register.getEmptyPasswordError();
+    const registerPage = new RegisterPage();
+    registerPage
+      .navigate()
+      .enterFirstName(this.testdata.firstname)
+      .enterLastName(this.testdata.lastname)
+      .enterAddress(this.testdata.address)
+      .enterCity(this.testdata.city)
+      .enterState(this.testdata.state)
+      .enterZipCode(this.testdata.zipCode)
+      .enterPhoneNumber(this.testdata.phoneNumber)
+      .enterSSN(this.testdata.ssn)
+      .enterUsername(this.testdata.username)
+      .enterConfirmationPassword(this.testdata.confirmationPassword)
+      .submit()
+      .getEmptyPasswordError();
   });
   it("Register user with empty confirmation password", function () {
-    const register = new RegisterPage();
-    register.navigate();
-    register.enterFirstName(this.testdata.firstname);
-    register.enterLastName(this.testdata.lastname);
-    register.enterAddress(this.testdata.address);
-    register.enterCity(this.testdata.city);
-    register.enterState(this.testdata.state);
-    register.enterZipCode(this.testdata.zipCode);
-    register.enterPhoneNumber(this.testdata.phoneNumber);
-    register.enterSSN(this.testdata.ssn);
-    register.enterPassword(this.testdata.password);
-    register.submit();
-    register.getEmptyConfirmationPasswordError();
+    const registerPage = new RegisterPage();
+    registerPage
+      .navigate()
+      .enterFirstName(this.testdata.firstname)
+      .enterLastName(this.testdata.lastname)
+      .enterAddress(this.testdata.address)
+      .enterCity(this.testdata.city)
+      .enterState(this.testdata.state)
+      .enterZipCode(this.testdata.zipCode)
+      .enterPhoneNumber(this.testdata.phoneNumber)
+      .enterSSN(this.testdata.ssn)
+      .enterUsername(this.testdata.username)
+      .enterPassword(this.testdata.password)
+      .submit()
+      .getEmptyConfirmationPasswordError();
   });
 });
