@@ -1,5 +1,9 @@
 node_modules/
 cypress/screenshots/
 cypress/videos/
+cypress/results/
+cypress/reports/
+allure-results
+allure-report
 .vscode/
 .cache

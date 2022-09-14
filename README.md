@@ -15,19 +15,25 @@ Install the dependencies.
 npm install
 ```
 
-Open test enviroment
+Open test enviroment.
 
 ```bash
 npm run cy:open
 ```
 
-Run tests
+Run tests and generate Allure report.
 
 ```bash
-npm run cy:run
+npm run cy:test
 ```
 
-Run tests via docker cli
+Open Allure report.
+
+```bash
+npm run allure:open
+```
+
+(Optional) Run tests via docker cli.
 
 ```bash
 docker run -it -v $PWD:/e2e -w /e2e cypress/included:8.2.0
